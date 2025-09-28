@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>YouTube Kids — Demo (kid-friendly UI)</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="appbar">
+    <div class="logo" aria-hidden>
+      <div class="mark">YK</div>
+      <div class="title">YouTube Kids — Demo</div>
+    </div>
+
+    <div class="search" role="search">
+      <label for="q" class="sr-only">Search shows</label>
+      <input id="q" placeholder="Search shows (try: animals)" />
+      <button class="big" id="shuffle">Shuffle</button>
+    </div>
+  </header>
+
+  <main>
+    <section aria-labelledby="grid-title">
+      <h2 id="grid-title" class="sr-only">Shows</h2>
+      <div id="grid" class="grid" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <!-- Modal / player -->
+  <div id="backdrop" class="modal-backdrop" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal" role="document">
+      <div class="player" id="playerWrap">
+        <!-- iframe inserted dynamically -->
+      </div>
+      <div class="modal-body">
+        <div>
+          <div class="title" id="modalTitle">Title</div>
+          <div class="meta-row" id="modalMeta">Channel • 4m</div>
+        </div>
+        <button class="close-btn" id="closeBtn" aria-label="Close player">✕</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
